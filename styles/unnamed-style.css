@@ -1,0 +1,55 @@
+/* unnamed styles are for general elements, no class names or specific id styles */
+:root {
+    --color1: #4A90E2;
+    --color2: #F7F7F7;
+    --color3: #ecfaf4;
+    --color4: #9B9B9B;
+    --color5: #646464;
+    --color6: #D0021B;
+    --color7: #AAFF00;
+    /* colours for specific types of html elements */
+    --links: #141817;
+
+    /* --trafficLight colors */
+    --low-priority: #4A4A4A;
+    --med-priority: #F5A623;
+    --high-priority: #7ED321;
+    /* temporary colours for development */
+    --trubleshootColor: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color3);
+}
+
+div {
+    background-color: var(--color2);
+}
+
+input,
+label {
+    margin: 1em auto;
+    min-width: 90%;
+    padding: .5em;
+}
+
+input[type=submit] {
+    margin-top: 2em;
+    color: var(--color2);
+    background-color: var(--color6);
+    border: none;
+    border-radius: 8px;
+    padding: .7em;
+}
+
+table,
+form {
+    margin: 20px auto;
+    padding: 20px;
+    border: solid 2px white;
+    background-color: var(--color2);
+    box-shadow: 0px 10px 20px var(--color1);
+    border-spacing: 0;
+
+}

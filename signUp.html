@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="styles/unnamed-style.css">
+    <link rel="stylesheet" href="styles/named-style.css">
+    <title>Sign Up</title>
+</head>
+
+    
+<body>
+  
+   
+    <main>
+       
+        <!-- form -->
+        <form id="userSignUp">
+            <div class="loginOrSignup">
+                <h2>Sign Up Page</h2>
+                <a href="index.php"><p>click back to home</p></a>
+                
+                <a href="index.php"><p>Not new? Sign up as a member here</p></a>
+            </div>
+
+            <label for="usernameInput">Username:</label>
+            <input type="text" name="usernameInput" id="usernameInput" required>
+            
+            <label for="emailInput">Email:</label>
+            <input type="email" name="emailInput" id="emailInput" required>
+            
+            <label for="passwordInput">Password:</label>
+            <input type="text" name="passwordInput" id="passwordInput" required>
+            
+            <label for="submit"></label>
+            <input type="submit" name="submit" id="submit" value="Sign up">
+            <div id="signUpResponse"></div>
+        </form>
+        
+    </main>
+<script>
+     function reload(){
+        document.location.assign('index.html');
+    }
+    // updates page without full reload
+     $(document).ready(function () {
+        $('#userSignUp').on('submit', function (event) {
+            // prevents form from loading page traditionally
+            event.preventDefault(); 
+
+            $.ajax({
+                type: 'POST',
+                url: 'signUp.php',
+                data: $(this).serialize(),
+                success: function (response) {
+                    $('#signUpResponse').html(response); // Update the response div with the result
+                },
+                error: function (xhr, status, error) {
+                    $('#signUpResponse').html('Response Error :' + error); // Display error message
+                }
+            });
+        });
+    });
+
+   
+</script>
+
+</body>
+</html>
