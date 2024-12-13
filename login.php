@@ -18,9 +18,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if ($result->num_rows>0) {
         
         $row = $result->fetch_assoc();
-        if ($password_in === $row["password_hash"]) {
+        if ($password_in === $row["password"]) {
             $_SESSION["username"] = $username_in;
-            echo "<script>document.location.assign('index.php')</script>";
+            echo "<script>document.location.assign('main.php')</script>";
         }else { 
             echo "Incorrect Username or Password";
             

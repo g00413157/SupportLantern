@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if(!$usernameExists && !$emailExists) {
     // Prepare the SQL statement
-    $stmt = $conn->prepare("INSERT INTO Users (username, email, password_hash) VALUES (?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO Users (username, email, password) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $username_in, $email_in, $password_in);
 
     // Execute the statement
