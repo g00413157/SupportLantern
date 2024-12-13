@@ -7,10 +7,17 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styles/unnamed-style.css">
     <link rel="stylesheet" href="styles/named-style.css">
+    <?php require 'connectToDB.php';
+    session_start(); ?>
+    <?php
+    $sql_ticket = "select distinct title, priority_id, contact_id from tickets where status_id = 2";
+    $sql_ticket_result = $conn->query($sql_ticket);
+    ?>
     <title>Home</title>
 </head>
 
 <body>
+    <!-- contains heading, hamburger menu  -->
     <header class="title-container">
         <h1>In Progress</h1>
         <div class="welcome-heading">
@@ -33,11 +40,8 @@
                 const burgerMenu = document.getElementById('burger-menu');
                 const dropdown = document.getElementById('ham-dropdown');
                 const hamburger = document.getElementById('hamburger');
-                
             </script>
             <?php
-            require 'connectToDB.php';
-            session_start();
             // heading for log in info
             if (isset($_SESSION['username'])) {
                 echo "<h2 id='subheading'>Logged in as " . $_SESSION["username"] . "</h2>";
@@ -49,26 +53,29 @@
                 burgerMenu.addEventListener('click', () => {
                     dropdown.classList.toggle('open');
                     hamburger.classList.toggle('expand');
-                   
+
                 });
             </script>
 
         </div>
     </header>
-
+    <!-- generates tickets view  -->
     <div class="ticket-container">
+                <?php
+                
+                if ($sql_ticket_result->num_rows > 0) {
+                    while ($row = $select_result->fetch_assoc()) {
+                        echo ' <div class="ticket  '.$row["priority"].'">';
+                        echo '<p class="ticket_id">'.$row["ticket_id"] .'</p>';
+                        echo '<p class="ticket_id">'.$row["title"] .'</p>';
+                    }
+                }else{
+                    echo '<div class="ticket"> <p class="ticket_id">No tickets</p><p class="title">new ticket will be displayed here</p></div>';
+                }
+                ?>
 
-        <div class="ticket">
-            <h3 class="ticket_id">000643</h3>
-
-            <h3 class="title">VPN Access</h3>
-
-        </div>
-        <div class="ticket"></div>
-        <div class="ticket"></div>
-        <div class="ticket"></div>
-        <div class="ticket"></div>
-        <div class="ticket"></div>
+    
+        
     </div>
     <div class="buttons-container">
         <button type="button" class="start-action" onclick="">New Ticket</button>
