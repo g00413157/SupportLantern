@@ -29,10 +29,10 @@
                 </button>
                 <nav class="ham-dropdown" id="ham-dropdown">
                     <ul>
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="main.php">Home</a></li>
                         <li><a href="#about">wht</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="logout.php">Log Out</a></li>
                     </ul>
                 </nav>
             </div>
