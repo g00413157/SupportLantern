@@ -11,10 +11,33 @@
     session_start(); ?>
     <?php
     // <!-- sql statement -->
-    $sql_ticket = "select distinct title, priority_id, contact_id from tickets where status_id = 2";
-    $sql_ticket_result = $conn->query($sql_ticket);
+    $ticket_id = $_GET['ticket_id'];
+    $contact_id = $_GET['contact_id'];
+
+    $sql_get_ticket = 
+    "select 
+    ticket_id,
+    title,
+    description,
+    contact_id,
+    priority_id,
+    date_created 
+    from tickets 
+    where ticket_id = $ticket_id";
+
+    $sql_get_contact = 
+    "select 
+    name, 
+    phone,
+    email 
+    from contacts 
+    where contact_id = $contact_id";
+
+    
+   
+     $sql_get_ticket_result = $conn->query($sql_get_ticket);
     ?>
-    <title>Home</title>
+    <title>Ticket Details</title>
 </head>
 
 <body>
@@ -60,9 +83,25 @@
 
         </div>
     </header>
+    
     <!-- generates tickets view  -->
     <div class="ticket-container">
-              
+                <?php
+                 if ($sql_get_ticket_result->num_rows > 0) {
+                    while ($row = $sql_get_ticket_result->fetch_assoc()) {
+                        echo ' <div class="ticketDetails  priority'.$row["priority_id"].'">';
+                        echo '<p><span class="small">Created: '.
+                        date_format(date_create($row["date_created"]), "d/m/y - H:i ") .'</span></p>'; 
+                        echo '<p>ticket: '.$row["ticket_id"] .'<br> '.$row["title"];
+                        echo '<br>Description: ';
+                        echo '</p><div class="blurb" disabled>'.$row["description"] .'</div>';
+                        echo '</div>';
+                    }
+                }else{
+                    echo '<div class="ticket"> <p class="ticket_id">No tickets</p><p class="title">Ticket does not exist</p></div>';
+                    
+                }
+                ?>
     </div>
     <div class="spacer"><p></p> </div>
     <div class="buttons-container">
