@@ -65,6 +65,12 @@
   background-color: var(--color4);
   box-shadow: 0px -3px 5px 0px var(--color5);
 }
+.buttons-container button:hover{
+  opacity: .8;
+}
+.buttons-container button:active{
+  opacity: .5;
+}
 /* hamburger menu */
 .hamburger{
   float: right;
@@ -111,4 +117,11 @@
 }
 .complete-action{
   background-color: var(--buttonFinish);
+}
+.spacer{
+  height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }

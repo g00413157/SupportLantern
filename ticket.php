@@ -11,7 +11,7 @@
     session_start(); ?>
     <?php
     // <!-- sql statement -->
-    $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 2";
+    $sql_ticket = "select distinct title, priority_id, contact_id from tickets where status_id = 2";
     $sql_ticket_result = $conn->query($sql_ticket);
     ?>
     <title>Home</title>
@@ -20,7 +20,7 @@
 <body>
     <!-- contains heading, hamburger menu  -->
     <header class="title-container">
-        <h1>In Progress</h1>
+        <h1>In Progress: </h1>
         <div class="welcome-heading">
             <!-- hamburger menu -->
             <div class="hamburger" id="hamburger">
@@ -62,33 +62,18 @@
     </header>
     <!-- generates tickets view  -->
     <div class="ticket-container">
-                <?php
-                
-                if ($sql_ticket_result->num_rows > 0) {
-                    while ($row = $sql_ticket_result->fetch_assoc()) {
-                        echo ' <div class="ticket  '.$row["priority_id"].'" 
-                            onclick="viewOpenTicket('.$row["ticket_id"].','.$row["contact_id"].')">';
-                        echo '<p class="ticket_id">'.$row["ticket_id"] .'</p>';
-                        echo '<p class="ticket_id">'.$row["title"] .'</p>';
-                        echo '</div>';
-                    }
-                }else{
-                    echo '<div class="ticket"> <p class="ticket_id">No tickets</p><p class="title">new ticket will be displayed here</p></div>';
-                    
-                }
-                ?>
-                <div class="spacer"><p>Open tickets will show up here</p> </div>
+              
     </div>
-   
+    <div class="spacer"><p></p> </div>
     <div class="buttons-container">
-        <button type="button" class="start-action" onclick="createNewTicket()">New Ticket</button>
-        <button type="button" class="complete-action" onclick="viewCompletedTickets()">Completed</button>
+        <button type="button" class="start-action" onclick="backToMain()">Back</button>
+        <button type="button" class="complete-action" onclick="completedTicket()">Complete Ticket</button>
     </div>
     <script>
         // ticket functions
-        function viewOpenTicket(ticket, contact){
-            // alert("get method to bring "+ticket+" and "+contact+" to view ticket page");
-            window.location.href = `ticket.php?${"ticket_id="+ticket, "contact_id="+ticket}`;
+        function backToMain(){
+            // back to main
+            window.location.href = `main.php?`;
         }
         function createNewTicket(){
             
