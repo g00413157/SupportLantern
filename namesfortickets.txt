@@ -144,3 +144,16 @@ VALUES
 ('Keyboard Keys Not Working', 'Mia Young reports that several keys on her keyboard are unresponsive.', 18, 2, 2),
 ('Unable to Download Attachments', 'Noah Scott cannot download email attachments; browser shows "blocked" message.', 19, 3, 3),
 ('Operating System Update Failure', 'Harper King reports that Windows updates fail with error code 0x80070005.', 20, 2, 1);
+
+
+Notes:
+contact_id: Assigned sequential IDs (1–20) for each contact.
+priority_id:
+1 = High Priority
+2 = Medium Priority
+3 = Low Priority
+status_id:
+1 = Open
+2 = In Progress
+3 = Resolved
+4 = Pending
