@@ -1,0 +1,15 @@
+{
+    "lang" :"eng",
+    "name": "SupportLantern",
+    "description": "This app is for the creation, progression and completion of IT Support Tickets  ",
+    "smart_url":"/SupportLantern/",
+    "background_color":""
+    ,"theme_color":"",
+    "icons":[
+        {
+            
+        }
+    ]
+    , "display":"standalone",
+    "orientation":"any"
+    }
