@@ -76,8 +76,35 @@
         function createNewTicket() {
 
         }
-        function viewCompletedTickets() {
+        function completedTicket(ticketId) {
+            // Confirm action with the user
+            if (confirm("Are you sure you want to mark this ticket as Resolved?")) {
+                // Create an XMLHttpRequest to send data to the backend
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "update_ticket_status.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
+                // Define the data to send (ticket_id and status_id for "Resolved" which is 3)
+                const data = `ticket_id=${ticketId}&new_status_id=3`;
+
+                // Handle the response
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        alert("Ticket marked as Resolved successfully!");
+                        // Optional: Refresh the page or update the ticket status dynamically
+                        location.reload();
+                    } else {
+                        alert("Error updating ticket status. Please try again.");
+                    }
+                };
+
+                // Send the request
+                xhr.send(data);
+            }
+        }
+
+        function viewCompletedTickets() {
+            window.location.href = `ticket.php?${"ticket_id=" + ticket + "&contact_id=" + contact}`;
         }
     </script>
 
