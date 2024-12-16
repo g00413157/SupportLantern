@@ -1,13 +1,11 @@
 /* unnamed styles are for general elements, no class names or specific id styles */
 :root {
     --color1: #AAFF00;
-    --color2: #dadada;
+    --color2: #ececec;
     --color3: #f8f8f8;
     --color4: #9B9B9B;
-    --color5: #646464;
+    --color5: #57096b;
     --color6: #7ED321;
-
-
     /* colours for specific types of html elements */
     --links: #141817;
     --buttonStart: #4A90E2;
@@ -19,7 +17,7 @@
     /* temporary colours for development */
     --trubleshootColor: red;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif; */
-}
+  }
 
 html {
     -ms-overflow-style: none;
@@ -33,7 +31,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-    background-color: var(--color3);
+    background-color: var(--color2);
     margin: 0;
     padding: 0;
 }

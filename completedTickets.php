@@ -18,9 +18,9 @@
 </head>
 
 <body>
-    <?php include "navigationCom.php"; ?>
+    <?php include "navigation.php"; ?>
     <!-- generates tickets view  -->
-    <div class="ticket-container">
+    <div class="ticket-container ">
         <?php
 
         if ($sql_ticket_result->num_rows > 0) {

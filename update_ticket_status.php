@@ -21,7 +21,7 @@ if (isset($_GET['ticket_id'])) {
 
     
     // Update query
-    $sql = "UPDATE tickets SET status_id = ? WHERE ticket_id = ?";
+    $sql = "UPDATE tickets SET status_id =  ? WHERE ticket_id = ?";
     $stmt = $connection->prepare($sql);
 
 
