@@ -14,7 +14,7 @@
     $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 3";
     $sql_ticket_result = $conn->query($sql_ticket);
     ?>
-    <title>?viewCompletedTickets</title>
+    <title>Completed Tickets</title>
 </head>
 
 <body>
