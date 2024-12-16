@@ -36,16 +36,16 @@
 
             </div>
             <div class="contacts-container">
-                <label for="fnameInput">first Name:</label>
-                <input type="text" name="fnameInput" id="fnameInput" required>
+                <label for="fnameInput">First Name:</label>
+                <input type="text" name="fnameInput" id="fnameInput" required><br>
 
-                <label for="lnameInput">last Name:</label>
+                <label for="lnameInput">Last Name:</label>
                 <input type="text" name="lnameInput" id="lnameInput" required>
 
-                <label for="emailInput">email:</label>
+                <label for="emailInput">Email:</label>
                 <input type="email" name="emailInput" id="emailInput" required>
 
-                <label for="phoneInput">phone:</label>
+                <label for="phoneInput">Phone:</label>
                 <input type="tel" name="phoneInput"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}" id="phoneInput" required>
             </div>
 
