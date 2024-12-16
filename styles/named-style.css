@@ -66,15 +66,20 @@
   padding: 5px;
 }
 .priority1{
-  border: dotted 3px var(--high-priority);
+  border: dotted 6px var(--high-priority);
 }
 .priority2{
-  border: dotted 3px var(--med-priority);
+  border: dotted 6px var(--med-priority);
 }
 .priority3{
-  border: dotted 3px var(--low-priority);
+  border: dotted 6px var(--low-priority);
 }
+.radioLabel{
+  display: flex;
+  align-items: baseline;
+  width: 15%;
 
+}
 .buttons-container{
   width: 100%;
   padding: .3in 0 .5in;
