@@ -1,6 +1,8 @@
 <!-- contains heading, hamburger menu  -->
 <header class="title-container">
-        <h1>Support Lantern</h1>
+<div class="logo-container">
+            <img class="logo" src="imgs/logo.png" alt="supportLantern - Beacon of IT support">
+        </div>
         <div class="welcome-heading">
             <!-- hamburger menu -->
             <div class="hamburger" id="hamburger">
@@ -25,7 +27,7 @@
             <?php
             // heading for log in info
             if (isset($_SESSION['username'])) {
-                echo "<h2 id='subheading'>Logged in as " . $_SESSION["username"] . "</h2>";
+                echo "<p id='subheading'>Logged in as " . $_SESSION["username"] . "</p>";
             }
             ?>
 
