@@ -11,7 +11,7 @@
     session_start(); ?>
     <?php
     // <!-- sql statement -->
-    $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 2";
+    $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 3";
     $sql_ticket_result = $conn->query($sql_ticket);
     ?>
     <title>Home</title>
@@ -39,8 +39,8 @@
     </div>
    
     <div class="buttons-container">
-        <button type="button" class="start-action" onclick="createNewTicket()">New Ticket</button>
-        <button type="button" class="complete-action" onclick="viewCompletedTickets()" >Completed</button>
+        <button type="button" class="start-action" onclick="backToMain()">Back</button>
+        <button type="button" class="complete-action" onclick="createNewTicket()" >Create New Ticket</button>
     </div>
     <script>
         // ticket functions
@@ -48,10 +48,15 @@
              window.location.href = `ticket.php?${"ticket_id="+ticket +"&contact_id="+contact}`;
         }
         function createNewTicket(){
+            window.location.href = `newTicket.php`;
             
         }
         function viewCompletedTickets(){
             window.location.href = `ticket.php?${"ticket_id="+ticket +"&contact_id="+contact}`;
+        }
+        function backToMain() {
+            // back to main
+            window.location.href = `main.php?`;
         }
            //service worker 
            if ('serviceWorker' in navigator) {
