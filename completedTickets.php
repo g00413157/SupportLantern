@@ -21,45 +21,48 @@
     <?php include "navigation.php"; ?>
     <!-- generates tickets view  -->
     <div class="ticket-container">
-                <?php
-                
-                if ($sql_ticket_result->num_rows > 0) {
-                    while ($row = $sql_ticket_result->fetch_assoc()) {
-                        echo ' <div class="ticket  priority'.$row["priority_id"].'" 
-                            onclick="viewCompletedTickets('.$row["ticket_id"].','.$row["contact_id"].')">';
-                        echo '<p class="ticket_id">'.$row["ticket_id"] .'</p>';
-                        echo '<p class="ticket_id">'.$row["title"] .'</p>';
-                        echo '</div>';
-                    }
-                }else{
-                    echo '<div class="ticket"> <p class="ticket_id">No tickets</p><p class="title">new ticket will be displayed here</p></div>';   
-                }
-                ?>
-                <div class="spacer"><p>Open tickets will show up here</p> </div>
+        <?php
+
+        if ($sql_ticket_result->num_rows > 0) {
+            while ($row = $sql_ticket_result->fetch_assoc()) {
+                echo ' <div class="ticket  priority' . $row["priority_id"] . '" 
+                            onclick="viewCompletedTickets(' . $row["ticket_id"] . ',' . $row["contact_id"] . ')">';
+                echo '<p class="ticket_id">' . $row["ticket_id"] . '</p>';
+                echo '<p class="ticket_id">' . $row["title"] . '</p>';
+                echo '</div>';
+            }
+        } else {
+            echo '<div class="ticket"> <p class="ticket_id">No tickets</p><p class="title">new ticket will be displayed here</p></div>';
+        }
+        ?>
+        <div class="spacer">
+            <p>Open tickets will show up here</p>
+        </div>
     </div>
-   
+
     <div class="buttons-container">
         <button type="button" class="start-action" onclick="backToMain()">Back</button>
-        <button type="button" class="complete-action" onclick="createNewTicket()" >Create New Ticket</button>
+        <button type="button" class="complete-action" onclick="createNewTicket()">Create New Ticket</button>
     </div>
     <script>
         // ticket functions
-        function viewOpenTicket(ticket, contact){
-             window.location.href = `ticket.php?${"ticket_id="+ticket +"&contact_id="+contact}`;
+        function viewOpenTicket(ticket, contact) {
+            window.location.href = `ticket.php?${"ticket_id=" + ticket + "&contact_id=" + contact}`;
         }
-        function createNewTicket(){
+        function createNewTicket() {
             window.location.href = `newTicket.php`;
-            
+
         }
-        function viewCompletedTickets(){
-            window.location.href = `ticket.php?${"ticket_id="+ticket +"&contact_id="+contact}`;
+        function viewCompletedTickets(ticket, contact) {
+            window.location.href = `ticket.php?ticket_id=${ticket}&contact_id=${contact}`;
         }
+
         function backToMain() {
             // back to main
             window.location.href = `main.php?`;
         }
-           //service worker 
-           if ('serviceWorker' in navigator) {
+        //service worker 
+        if ('serviceWorker' in navigator) {
             navigator.serviceWorker
                 .register('/service-worker.js')
                 .then(registration => {
@@ -70,9 +73,9 @@
                 });
         }
 
-        </script>
-    
-    
+    </script>
+
+
 </body>
 
 </html>
