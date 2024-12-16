@@ -78,8 +78,9 @@
             // document.location.assign('newTicketSuccess.php');
         }
         // updates page without full reload
+        console.log("here");
         $(document).ready(function() {
-            alert("here");
+            
             $('#newTicket').on('submit', function(event) {
                 // prevents form from loading page traditionally
                 event.preventDefault();
