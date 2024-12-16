@@ -74,7 +74,12 @@
 .priority3{
   border: dotted 6px var(--low-priority);
 }
+.radioLabel{
+  display: flex;
+  align-items: baseline;
+  width: 15%;
 
+}
 .buttons-container{
   width: 100%;
   padding: .3in 0 .5in;
