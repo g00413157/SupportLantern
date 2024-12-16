@@ -39,7 +39,7 @@
                     echo '<div class="ticket"> <p class="ticket_id">No tickets</p><p class="title">new ticket will be displayed here</p></div>';   
                 }
                 ?>
-                <div class="spacer"><p>Open tickets will show up here</p> </div>
+                <div class="spacer"><p>Open tickets will show up here...</p> </div>
     </div>
    
     <div class="buttons-container">
