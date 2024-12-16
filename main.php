@@ -7,18 +7,22 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styles/unnamed-style.css">
     <link rel="stylesheet" href="styles/named-style.css">
-    <?php require 'connectToDB.php';
-    session_start(); ?>
-    <?php
-    // <!-- sql statement -->
-    $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 2";
-    $sql_ticket_result = $conn->query($sql_ticket);
-    ?>
     <title>Home</title>
 </head>
 
 <body>
-    <?php include "navigation.php"; ?>
+    <?php
+     session_start();
+    //  connect to database
+    // add navigation
+     require 'connectToDB.php';
+     include "navigation.php";
+    
+     // <!-- sql statement -->
+     $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 2";
+     $sql_ticket_result = $conn->query($sql_ticket);
+     
+     ?>
     <!-- generates tickets view  -->
     <div class="ticket-container">
                 <?php
@@ -48,10 +52,10 @@
              window.location.href = `ticket.php?${"ticket_id="+ticket +"&contact_id="+contact}`;
         }
         function createNewTicket(){
-            
+            window.location.href = `newTicket.php`;
         }
         function viewCompletedTickets(){
-            
+            window.location.href = `completedTickets.php`;
         }
            //service worker 
            if ('serviceWorker' in navigator) {
