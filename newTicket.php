@@ -18,7 +18,7 @@
         //  connect to database
         // add navigation
         require 'connectToDB.php';
-        include "navigation.php";
+        include "navigationTik.php";
 
         // <!-- sql statement -->
         $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 2";

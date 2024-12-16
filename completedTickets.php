@@ -14,11 +14,11 @@
     $sql_ticket = "select distinct ticket_id, title, priority_id, contact_id from tickets where status_id = 3";
     $sql_ticket_result = $conn->query($sql_ticket);
     ?>
-    <title>Home</title>
+    <title>?viewCompletedTickets</title>
 </head>
 
 <body>
-    <?php include "navigation.php"; ?>
+    <?php include "navigationCom.php"; ?>
     <!-- generates tickets view  -->
     <div class="ticket-container">
         <?php
