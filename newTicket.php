@@ -45,13 +45,8 @@
                 <label for="emailInput">Email:</label>
                 <input type="email" name="emailInput" id="emailInput" required>
 
-<<<<<<< HEAD
                 <label for="phoneInput">phone:</label>
                 <input type="tel" name="phoneInput" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" id="phoneInput" required>
-=======
-                <label for="phoneInput">Phone:</label>
-                <input type="tel" name="phoneInput"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}" id="phoneInput" required>
->>>>>>> f810a7f683b92058e7a757363a95ec9b02876d17
             </div>
 
             <div class="ticketinfo-container">
