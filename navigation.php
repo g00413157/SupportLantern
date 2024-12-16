@@ -1,6 +1,6 @@
 <!-- contains heading, hamburger menu  -->
 <header class="title-container">
-        <h1>In Progress</h1>
+        <h1>Support Lantern</h1>
         <div class="welcome-heading">
             <!-- hamburger menu -->
             <div class="hamburger" id="hamburger">
